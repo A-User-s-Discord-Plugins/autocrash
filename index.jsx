@@ -1,8 +1,8 @@
 import { Plugin } from '@vizality/entities'
 const { open: openModal } = require('@vizality/modal')
 
-module.exports = class QuickImages extends Plugin {
-    onStart() {
+module.exports = class Autocrash extends Plugin {
+    start() {
         vizality.api.commands.registerCommand({
             command: 'crash',
             description: 'Crashes Discord',
@@ -13,7 +13,7 @@ module.exports = class QuickImages extends Plugin {
         });
     }
 
-    onStop(){
+    stop(){
         vizality.api.commands.unregisterCommand('crash');
     }
 }
